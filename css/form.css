@@ -1,0 +1,34 @@
+.form__labelText {
+    width: 250px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+    .form__field {
+        border: 2px solid rgb(130, 125, 125);
+        padding: 10px;
+        border-radius: 10px;
+        max-width: 120px;
+    }
+
+.form__fieldset {
+    border-radius: 65px;
+    border: 10px inset hsla(204, 67%, 58%, 0.842);
+}
+
+.form__legend {
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+    color: rgb(23, 23, 23);
+    padding: 0 10px;
+}
+
+.form__result {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.form__paragraph {
+    margin-left: 5px;
+}

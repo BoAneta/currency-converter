@@ -1,0 +1,17 @@
+.form__button {
+    display: block;
+    margin: auto;
+    width: 222px;
+    padding: 15px;
+    border: none;
+    border-radius: 20px;
+    background-color: hsla(204, 67%, 58%, 0.842);
+}
+
+.form__button:hover {
+    background-color: hsla(204, 48%, 44%, 0.842);
+}
+
+.form__button:active {
+    background-color: hsla(204, 47%, 27%, 0.842);
+}
