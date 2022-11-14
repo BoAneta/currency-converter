@@ -1,14 +1,14 @@
-let formElement = document.querySelector(".js-form");
-let toExchangeElement = document.querySelector(".js-toExchange");
-let toGetElement = document.querySelector(".js-toGet");
-let currencyFromElement = document.querySelector(".js-currencyFrom");
-let currencyToElement = document.querySelector(".js-currencyTo");
-let submitElement = document.querySelector(".js-submit");
-let resultElement = document.querySelector(".js-result");
+const formElement = document.querySelector(".js-form");
+const toExchangeElement = document.querySelector(".js-toExchange");
+const toGetElement = document.querySelector(".js-toGet");
+const currencyFromElement = document.querySelector(".js-currencyFrom");
+const currencyToElement = document.querySelector(".js-currencyTo");
+const submitElement = document.querySelector(".js-submit");
+const resultElement = document.querySelector(".js-result");
 
-let PLN = 1;
-let EUR = 4.67;
-let NOK = 0.46;
+const PLN = 1;
+const EUR = 4.67;
+const NOK = 0.46;
 
 formElement.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -21,7 +21,7 @@ formElement.addEventListener("submit", (event) => {
   switch (currencyFromElement.value) {
     case "PLN":
       currencyFromselect = PLN;
-      break;1
+      break;
     case "€":
       currencyFromselect = EUR;
       break;
