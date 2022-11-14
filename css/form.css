@@ -11,6 +11,10 @@
         max-width: 120px;
     }
 
+.form__field--disabled {
+    background-color: rgb(255, 255, 255);
+}
+
 .form__fieldset {
     border-radius: 65px;
     border: 10px inset hsla(204, 67%, 58%, 0.842);
