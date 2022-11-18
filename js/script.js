@@ -1,49 +1,63 @@
-const formElement = document.querySelector(".js-form");
-const toExchangeElement = document.querySelector(".js-toExchange");
-const toGetElement = document.querySelector(".js-toGet");
-const currencyFromElement = document.querySelector(".js-currencyFrom");
-const currencyToElement = document.querySelector(".js-currencyTo");
-const submitElement = document.querySelector(".js-submit");
-const resultElement = document.querySelector(".js-result");
+{
+  const calculateRate = (currencyFrom, currencyTo, value) => {
+    
+    const PLN = 1;
+    const EUR = 4.67;
+    const NOK = 0.46;
 
-const PLN = 1;
-const EUR = 4.67;
-const NOK = 0.46;
+    let currencyFromselect;
+    let currencyToselect;
 
-formElement.addEventListener("submit", (event) => {
-  event.preventDefault();
+    switch (currencyFrom) {
+      case "PLN":
+        currencyFromselect = PLN;
+        break;
+      case "€":
+        currencyFromselect = EUR;
+        break;
+      case "NOK":
+        currencyFromselect = NOK;
+    };
 
-  let currencyFromselect;
-  let currencyToselect;
-  let toExchangeValue = +toExchangeElement.value;
-  let result;
+    switch (currencyTo) {
+      case "PLN":
+        currencyToselect = PLN;
+        break;
+      case "€":
+        currencyToselect = EUR;
+        break;
+      case "NOK":
+        currencyToselect = NOK;
+    };
 
-  switch (currencyFromElement.value) {
-    case "PLN":
-      currencyFromselect = PLN;
-      break;
-    case "€":
-      currencyFromselect = EUR;
-      break;
-    case "NOK":
-      currencyFromselect = NOK;
-      break;
-  }
+    return (value * currencyFromselect) / currencyToselect;
+  };
 
-  switch (currencyToElement.value) {
-    case "PLN":
-      currencyToselect = PLN;
-      break;
-    case "€":
-      currencyToselect = EUR;
-      break;
-    case "NOK":
-      currencyToselect = NOK;
-      break;
-  }
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+    
+    const toExchangeElement = document.querySelector(".js-toExchange");
+    const toGetElement = document.querySelector(".js-toGet");
+    const currencyFromElement = document.querySelector(".js-currencyFrom");
+    const currencyToElement = document.querySelector(".js-currencyTo");
+    const resultElement = document.querySelector(".js-result");
 
-  result = (toExchangeValue * currencyFromselect) / currencyToselect;
-  toGetElement.value = result.toFixed(2);
+    const toExchangeValue = +toExchangeElement.value;
 
-  resultElement.innerHTML = `Wymieniasz <strong>${toExchangeValue.toFixed(2)} ${currencyFromElement.value}</strong> i otrzymasz <strong>${result.toFixed(2)} ${currencyToElement.value}</strong>`;
-});
+    const result = calculateRate(currencyFromElement.value, currencyToElement.value, toExchangeValue);
+
+    toGetElement.value = result.toFixed(2);
+
+    resultElement.innerHTML = `Wymieniasz <strong>${toExchangeValue.toFixed(2)}${currencyFromElement.value}</strong> i otrzymasz <strong>${result.toFixed(2)} ${currencyToElement.value}</strong>`;
+  };
+
+  const init = () => {
+  
+    const formElement = document.querySelector(".js-form");
+    
+    formElement.addEventListener("submit", onFormSubmit);
+    
+  };
+
+  init();
+}
