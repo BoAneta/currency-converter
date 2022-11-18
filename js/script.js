@@ -1,6 +1,6 @@
 {
   const calculateRate = (currencyFrom, currencyTo, value) => {
-    
+
     const PLN = 1;
     const EUR = 4.67;
     const NOK = 0.46;
@@ -33,14 +33,20 @@
     return (value * currencyFromselect) / currencyToselect;
   };
 
+  const updateResultText = (toExchangeValue, currencyFromElement, result, currencyToElement) => {
+    const resultElement = document.querySelector(".js-result");
+    
+    resultElement.innerHTML = `Wymieniasz <strong>${toExchangeValue.toFixed(2)}${currencyFromElement.value}</strong> i otrzymasz <strong>${result.toFixed(2)} ${currencyToElement.value}</strong>`;
+  };
+
   const onFormSubmit = (event) => {
     event.preventDefault();
-    
+
     const toExchangeElement = document.querySelector(".js-toExchange");
     const toGetElement = document.querySelector(".js-toGet");
     const currencyFromElement = document.querySelector(".js-currencyFrom");
     const currencyToElement = document.querySelector(".js-currencyTo");
-    const resultElement = document.querySelector(".js-result");
+
 
     const toExchangeValue = +toExchangeElement.value;
 
@@ -48,15 +54,14 @@
 
     toGetElement.value = result.toFixed(2);
 
-    resultElement.innerHTML = `Wymieniasz <strong>${toExchangeValue.toFixed(2)}${currencyFromElement.value}</strong> i otrzymasz <strong>${result.toFixed(2)} ${currencyToElement.value}</strong>`;
+    updateResultText(toExchangeValue, currencyFromElement, result, currencyToElement);
   };
 
   const init = () => {
-  
+
     const formElement = document.querySelector(".js-form");
-    
+
     formElement.addEventListener("submit", onFormSubmit);
-    
   };
 
   init();
