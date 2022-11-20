@@ -1,5 +1,5 @@
 {
-  const calculateRate = (currencyFrom, currencyTo, value) => {
+  const calculateResult = (currencyFrom, currencyTo, value) => {
 
     const PLN = 1;
     const EUR = 4.67;
@@ -50,7 +50,7 @@
 
     const toExchangeValue = +toExchangeElement.value;
 
-    const result = calculateRate(currencyFromElement.value, currencyToElement.value, toExchangeValue);
+    const result = calculateResult(currencyFromElement.value, currencyToElement.value, toExchangeValue);
 
     toGetElement.value = result.toFixed(2);
 
