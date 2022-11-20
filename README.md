@@ -5,7 +5,7 @@ This is my second project on FronEnd Dev course with YouCode. Here you can check
 ## Demo 
 https://boaneta.github.io/currency-converter/
 
-![Converter gif](images/converter-gif.gif)
+![Converter gif](images/gif-converter.gif)
 
 ## Languages and conventions used in the project
 - HTML
