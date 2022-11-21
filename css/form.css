@@ -5,11 +5,18 @@
 }
 
 .form__field {
-        border: 2px solid rgb(130, 125, 125);
-        padding: 10px;
-        border-radius: 10px;
-        max-width: 120px;
+    border: 2px solid rgb(130, 125, 125);
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 120px;
+}
+
+
+@media (max-width: 543px) {
+    .form__field {
+        max-width: none;
     }
+}
 
 .form__field--disabled {
     background-color: rgb(255, 255, 255);
