@@ -10,6 +10,7 @@ html {
 
 .body {
   font-family: 'Montserrat', sans-serif;
+  display: flex;
   background-image: url("../images/money.jpg");
   background-size: cover;
   background-repeat:inherit;
